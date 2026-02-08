@@ -10,7 +10,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "typegen": "sanity typegen generate"
+    "typegen": "cd ../studio && npx sanity schema extract --enforce-required-fields && npx sanity typegen generate"
   },
   "dependencies": {
     "@nuxt/fonts": "^0.12.1",

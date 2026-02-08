@@ -15,6 +15,12 @@ export default defineCliConfig({
     projectId,
     dataset,
   },
+  typegen: {
+    path: "./src/**/*.{ts,tsx,js,jsx}", // glob pattern to your typescript files. Can also be an array of paths
+    schema: "./schema.json", // path to your schema file, generated with 'sanity schema extract' command
+    generates: "../frontend/app/sanity/types.ts", // path to the output file for generated type definitions
+    overloadClientMethods: true, // set to false to disable automatic overloading the sanity client
+  },
   studioHost: process.env.SANITY_STUDIO_STUDIO_HOST || '', // Visit https://www.sanity.io/docs/environment-variables to learn more about using environment variables for local & production.
   autoUpdates: true,
 })

@@ -1,16 +1,18 @@
 <script lang="ts" setup>
-import type { PageQueryResult } from "~/sanity/types";
+import type { Page } from "~/sanity/types";
 
 type PageBuilderBlock = NonNullable<
-  NonNullable<PageQueryResult>["pageBuilder"]
+  NonNullable<Page>["pageBuilder"]
 >[number];
 
-defineProps({
+const props = defineProps({
   blocks: {
     type: Array as () => PageBuilderBlock[],
     required: false,
   },
 });
+
+
 </script>
 
 <template>
