@@ -1,7 +1,6 @@
 [build]
-  base = "frontend"
-  command = "cd .. && npm ci && cd frontend && npm run build"
-  publish = ".output/public"
+  command = "npm ci && npm run build --prefix frontend"
+  publish = "frontend/.output/public"
 
 [functions]
   node_bundler = "esbuild"
