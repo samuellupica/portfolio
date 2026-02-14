@@ -2,6 +2,11 @@
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineNuxtConfig({
+    app: {
+        head: {
+            title: 'Samuel Lupica - Frontend Developer',
+        },
+    },
     nitro: {
         preset: 'netlify',
     },
