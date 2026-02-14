@@ -1,10 +1,9 @@
 [build]
-  base = "frontend"
-  command = "npm ci && (cd ../studio && npm ci) && npm run build"
-  publish = ".output/public"
+  command = "npm ci && npm run build --workspace=frontend"
+  publish = "frontend/.output/public"
 
 [functions]
-  directory = ".netlify/functions-internal"
+  directory = "frontend/.netlify/functions-internal"
   node_bundler = "esbuild"
 
 [dev]
