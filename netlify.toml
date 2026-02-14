@@ -1,5 +1,6 @@
 [build]
-  command = "npm ci && cd frontend && npm run build"
+  base = "frontend"
+  command = "(cd ../studio && npm ci) && npm ci && npm run build"
   publish = ".output/public"
 
 [functions]
