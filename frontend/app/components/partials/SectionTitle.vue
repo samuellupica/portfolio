@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { SectionTitle } from '~/sanity/types';
 
-const props = defineProps<SectionTitle>();
+defineProps<SectionTitle>();
 </script>
 
 <template>
@@ -10,6 +10,8 @@ const props = defineProps<SectionTitle>();
             <span
                 v-for="(word, i) in title"
                 :key="i"
+                class="hyphens-auto"
+                lang="de"
                 :class="{
                     'text-text-accent': word._type === 'highlightedText',
                 }"

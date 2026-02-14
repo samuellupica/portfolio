@@ -17,7 +17,7 @@ const props = withDefaults(
             :class="{ 'animate-fade-in-blur': isVisible }"
         >
             <div
-                class="max-w-section-md ml-auto flex items-start gap-24 md:gap-44 md:items-end flex-col lg:flex-row"
+                class="max-w-section-md ml-auto flex items-start gap-24 md:gap-44 md:items-end flex-col-reverse lg:flex-row"
             >
                 <div
                     class="w-full lg:w-4/7 lg:mb-52 flex flex-col gap-y-4 md:gap-y-6"
