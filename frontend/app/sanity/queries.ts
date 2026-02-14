@@ -48,11 +48,9 @@ export const pageQuery = defineQuery(/* groq */ `
     ...,
     "pageBuilder": pageBuilder[]{
       ...,
-
       _type == "textImage" => {
         ${linkFields}
       },
-
       _type == "teaserProjectCards" => {
         ...,
         "projects": projects[]->{
@@ -60,7 +58,6 @@ export const pageQuery = defineQuery(/* groq */ `
           "slug": slug.current
         }
       },
-
       _type == "infoSection" => {
         content[]{
           ...,

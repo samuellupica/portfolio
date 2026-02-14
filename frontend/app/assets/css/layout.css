@@ -1,0 +1,15 @@
+main {
+    @apply md:py-26 py-21;
+}
+
+.section-container {
+    @apply mx-auto md:px-inlay-padding-desktop px-inlay-padding-mobile w-full;
+}
+
+.section-container--lg {
+    @apply max-w-section-lg;
+}
+
+.section-container--md {
+    @apply max-w-section-md;
+}

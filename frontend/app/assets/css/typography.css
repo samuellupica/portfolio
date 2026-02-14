@@ -1,0 +1,11 @@
+.lead-text-lg {
+    @apply font-medium text-[22px] leading-[125%] md:text-[36px] md:leading-[140%];
+}
+
+.lead-text-sm {
+    @apply font-medium text-[20px] leading-[125%] md:text-[28px] md:leading-[140%];
+}
+
+.section-title {
+    @apply font-medium text-[48px] leading-[105%] md:text-[92px] md:leading-[120%] md:mb-[30px] mb-20;
+}

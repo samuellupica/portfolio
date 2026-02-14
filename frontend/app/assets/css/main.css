@@ -1,151 +1,125 @@
-@import "tailwindcss";
-
-@plugin "@tailwindcss/typography";
-
-@utility container {
-  margin: 0 auto;
-  padding: 0 2rem;
-}
+@import 'tailwindcss';
+@import './base.css';
+@import './switzer.css';
+@import './layout.css';
+@import './animation.css';
+@import './typography.css';
 
 @theme {
-  --shadow-layer: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
+    /* Collection: Color Pallete */
 
-  --color-nuxt: #00dc82;
+    --font-switzer: 'Switzer-Variable', sans-serif;
 
-  --color-black: #0d0e12;
-  --color-white: #fff;
-  --color-cyan-50: #e7fefe;
-  --color-cyan-100: #c5fcfc;
-  --color-cyan-200: #96f8f8;
-  --color-cyan-300: #62efef;
-  --color-cyan-400: #18e2e2;
-  --color-cyan-500: #04b8be;
-  --color-cyan-600: #037782;
-  --color-cyan-700: #024950;
-  --color-cyan-800: #042f34;
-  --color-cyan-900: #072227;
-  --color-cyan-950: #0d181c;
-  --color-gray-50: #f6f6f8;
-  --color-gray-100: #eeeef1;
-  --color-gray-200: #e3e4e8;
-  --color-gray-300: #bbbdc9;
-  --color-gray-400: #9499ad;
-  --color-gray-500: #727892;
-  --color-gray-600: #515870;
-  --color-gray-700: #383d51;
-  --color-gray-800: #252837;
-  --color-gray-900: #1b1d27;
-  --color-gray-950: #13141b;
-  --color-blue-50: #e8f0fc;
-  --color-blue-100: #d2e2fa;
-  --color-blue-200: #a5c5f6;
-  --color-blue-300: #79a8f1;
-  --color-blue-400: #4c8bed;
-  --color-blue-500: #206ee9;
-  --color-blue-600: #1c5bbe;
-  --color-blue-700: #194892;
-  --color-blue-800: #163668;
-  --color-blue-900: #13233c;
-  --color-blue-950: #111a27;
-  --color-purple-50: #f8f5ff;
-  --color-purple-100: #f1ebff;
-  --color-purple-200: #ece1fe;
-  --color-purple-300: #ccb1fc;
-  --color-purple-400: #b087f7;
-  --color-purple-500: #8f57ef;
-  --color-purple-600: #721fe5;
-  --color-purple-700: #4c1a9e;
-  --color-purple-800: #2f1862;
-  --color-purple-900: #23173f;
-  --color-purple-950: #181128;
-  --color-magenta-50: #fcebf5;
-  --color-magenta-100: #f9d7eb;
-  --color-magenta-200: #f4afd8;
-  --color-magenta-300: #ef87c4;
-  --color-magenta-400: #ea5fb1;
-  --color-magenta-500: #e5389e;
-  --color-magenta-600: #ba3082;
-  --color-magenta-700: #8f2866;
-  --color-magenta-800: #65204a;
-  --color-magenta-900: #3a182d;
-  --color-magenta-950: #25141f;
-  --color-red-50: #fff6f5;
-  --color-red-100: #ffe7e5;
-  --color-red-200: #ffdedc;
-  --color-red-300: #fdada5;
-  --color-red-400: #f77769;
-  --color-red-500: #ef4434;
-  --color-red-600: #cc2819;
-  --color-red-700: #8b2018;
-  --color-red-800: #4d1714;
-  --color-red-900: #321615;
-  --color-red-950: #1e1011;
-  --color-orange-50: #fcf1e8;
-  --color-orange-100: #f9e3d2;
-  --color-orange-200: #f4c7a6;
-  --color-orange-300: #efab7a;
-  --color-orange-400: #ea8f4e;
-  --color-orange-500: #e57322;
-  --color-orange-600: #ba5f1e;
-  --color-orange-700: #8f4b1b;
-  --color-orange-800: #653818;
-  --color-orange-900: #3a2415;
-  --color-orange-950: #251a13;
-  --color-yellow-50: #fefae1;
-  --color-yellow-100: #fcf3bb;
-  --color-yellow-200: #f9e994;
-  --color-yellow-300: #f7d455;
-  --color-yellow-400: #f9bc15;
-  --color-yellow-500: #d28a04;
-  --color-yellow-600: #965908;
-  --color-yellow-700: #653a0b;
-  --color-yellow-800: #3b220c;
-  --color-yellow-900: #271a11;
-  --color-yellow-950: #181410;
-  --color-green-50: #e7f9ed;
-  --color-green-100: #d0f4dc;
-  --color-green-200: #a1eaba;
-  --color-green-300: #72e097;
-  --color-green-400: #43d675;
-  --color-green-500: #3ab564;
-  --color-green-600: #329454;
-  --color-green-700: #297343;
-  --color-green-800: #215233;
-  --color-green-900: #183122;
-  --color-green-950: #14211a;
+    /* color */
+    --color-floral-100: rgb(254, 250, 241);
+    --color-lavender-500: rgb(168, 73, 246);
+    --color-onyx-900: rgb(21, 20, 20);
+    --color-onyx-950: rgb(10, 10, 10);
+    --color-onyx-800: rgb(38, 37, 37);
+    --color-onyx-700: rgb(51, 50, 50);
+    --color-onyx-600: rgb(77, 77, 77);
+    --color-onyx-500: rgb(102, 102, 102);
+    --color-onyx-400: rgb(128, 128, 128);
+    --color-onyx-300: rgb(179, 179, 179);
+    --color-onyx-200: rgb(204, 204, 204);
+    --color-onyx-100: rgb(230, 230, 230);
+    --color-onyx-50: rgb(242, 242, 242);
+    /* Collection: Color Semantics */
 
-  --font-display: "Inter", "sans-serif";
-  --font-sans: "Inter", "sans-serif";
+    /* color */
+    --color-surface-base: var(--color-floral-100);
+    --color-surface-inverted: var(--color-onyx-800);
+    --color-text-accent: var(--color-lavender-500);
+    --color-text-main: var(--color-onyx-950);
+    --color-text-body: var(--color-onyx-950);
+    --color-tag-tech-primary: rgb(255, 234, 0);
+    --color-tag-design-primary: rgb(0, 255, 225);
+    --color-border: var(--color-onyx-800);
+    --color-link-primary: var(--color-onyx-600);
+    --color-link-primary-hover: var(--color-onyx-950);
 
-  --animate-gradient: gradient 2s ease-in-out infinite;
-  @keyframes gradient {
-    0%,
-    100% {
-      background-position: 0% 50%;
+    /* radius */
+    --radius-sm: 2px;
+
+    /* spacing */
+    --spacing-12: 12px;
+    --spacing-section-lg: 1920px;
+    --spacing-16: 16px;
+    --spacing-20: 20px;
+    --spacing-section-md: 1348px;
+    --spacing-24: 24px;
+    --spacing-section-sm: 1240px;
+    --spacing-28: 28px;
+    --spacing-32: 32px;
+    --spacing-36: 36px;
+    --spacing-40: 40px;
+    --spacing-44: 44px;
+    --spacing-48: 48px;
+    --spacing-52: 52px;
+    --spacing-64: 64px;
+    --spacing-80: 80px;
+    --spacing-100: 100px;
+    --spacing-152: 152px;
+    --spacing-164: 164px;
+    --spacing-inlay-padding-desktop: 32px;
+    --spacing-inlay-padding-mobile: 16px;
+
+    /* filter */
+    --animation-blur-sm: 10px;
+    --animation-blur-lg: 130px;
+
+    /* animations */
+    --hero-animation-duration: 1000ms;
+    --fade-in-duration: 1300ms;
+
+    --dur-hero: 1000ms;
+    --dur-fade: 1300ms;
+
+    /* default blur value (can be overridden per element) */
+    --blur-start: var(--animation-blur-sm);
+
+    --animate-fade-in: fadeIn var(--dur-fade) ease forwards;
+    --animate-fade-in-blur: fadeInBlur var(--dur-hero) ease forwards;
+    --animate-slide-in-from-right: slideInFromRight var(--dur-hero) ease
+        forwards;
+
+    @keyframes slideInFromRight {
+        from {
+            opacity: 0;
+            transform: translateX(20%);
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
     }
-    50% {
-      background-position: 100% 50%;
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
-  }
 
-  --default-transition-duration: 250ms;
-}
+    @keyframes fadeInBlurSm {
+        from {
+            filter: blur(var(--animation-blur-sm));
+        }
+        to {
+            filter: blur(0);
+            opacity: 1;
+        }
+    }
 
-@keyframes expandWidth {
-  0% {
-    width: 0vw;
-    opacity: 0%;
-  }
-  50% {
-    width: 40vw;
-    opacity: 75%;
-  }
-  100% {
-    width: 25vw;
-    opacity: 20%;
-  }
-}
-
-.animate-width {
-  animation: expandWidth 1s forwards;
+    @keyframes fadeInBlurLg {
+        from {
+            filter: blur(var(--animation-blur-lg));
+        }
+        to {
+            filter: blur(0);
+            opacity: 1;
+        }
+    }
 }
