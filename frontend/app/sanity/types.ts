@@ -74,7 +74,11 @@ export type TextImage = {
         crop?: SanityImageCrop;
         _type: 'image';
     };
-    link?: Link;
+    link?: Array<
+        {
+            _key: string;
+        } & Link
+    >;
 };
 
 export type PageReference = {
@@ -158,7 +162,11 @@ export type Project = {
     teaserText?: string;
     context?: 'Personal' | 'Work' | 'University' | 'Hackathon';
     role: 'Solo' | 'Team';
-    focus: Array<string>;
+    focus?: Array<
+        {
+            _key: string;
+        } & FocusItem
+    >;
     githubUrl?: string;
     liveUrl?: string;
     figmaUrl?: string;
@@ -274,6 +282,12 @@ export type SpecialImageText = {
     text: string;
 };
 
+export type FocusItem = {
+    _type: 'focusItem';
+    title: string;
+    color?: 'tech' | 'design';
+};
+
 export type HighlightedText = {
     _type: 'highlightedText';
     text: string;
@@ -308,12 +322,9 @@ export type Settings = {
     _updatedAt: string;
     _rev: string;
     navigationItems?: Array<
-        | ({
-              _key: string;
-          } & PageReference)
-        | ({
-              _key: string;
-          } & PageAnchorLink)
+        {
+            _key: string;
+        } & PageReference
     >;
     externalNavigationLinks?: Array<
         {
@@ -578,6 +589,7 @@ export type AllSanitySchemaTypes =
     | Person
     | Page
     | SpecialImageText
+    | FocusItem
     | HighlightedText
     | NormalText
     | PageAnchorLink

@@ -108,14 +108,8 @@ export const project = defineType({
             title: 'Focus',
             type: 'array',
             group: 'meta',
-            of: [{ type: 'string' }],
-            validation: (rule) => rule.required(),
-            options: {
-                list: [
-                    { title: 'Frontend', value: 'Frontend' },
-                    { title: 'UI / UX', value: 'UI/UX' },
-                ],
-            },
+            of: [{ type: 'focusItem' }],
+            validation: (rule) => rule.min(1),
         }),
         defineField({
             name: 'githubUrl',
@@ -145,8 +139,27 @@ export const project = defineType({
     ],
 });
 
-export const focusItems = [
-    {
-        title: 'UI / UX',
-    },
-];
+export const focusItem = defineType({
+    name: 'focusItem',
+    title: 'Focus Item',
+    type: 'object',
+    fields: [
+        defineField({
+            name: 'title',
+            title: 'Title',
+            type: 'string',
+            validation: (rule) => rule.required(),
+        }),
+        defineField({
+            name: 'color',
+            title: 'Color',
+            type: 'string',
+            options: {
+                list: [
+                    { title: 'Tech', value: 'tech' },
+                    { title: 'Design', value: 'design' },
+                ],
+            },
+        }),
+    ],
+});

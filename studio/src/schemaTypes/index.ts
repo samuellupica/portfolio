@@ -5,7 +5,7 @@ import { link } from './objects/link';
 import { blockContent } from './objects/blockContent';
 import { hero, specialImageText } from './objects/hero';
 import { textImage } from './objects/textImage';
-import { project } from './documents/project';
+import { focusItem, project } from './documents/project';
 import { teaserProjectCards } from './objects/teaserProjectCards';
 import { buttonLink } from './objects/buttonLink';
 import {
@@ -31,6 +31,7 @@ export const schemaTypes = [
     normalText,
     highlightedText,
     specialImageText,
+    focusItem,
     // Documents
     page,
     post,

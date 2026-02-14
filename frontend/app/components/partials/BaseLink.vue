@@ -7,12 +7,14 @@ const { linkType, standalone } = withDefaults(
             variant?: 'primary' | 'secondary';
             size?: 'sm';
             standalone?: boolean;
+            isNavLink?: boolean;
         }
     >(),
     {
         variant: 'primary',
         size: 'sm',
         standalone: false,
+        isNavLink: false,
     }
 );
 

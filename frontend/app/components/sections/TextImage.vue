@@ -26,8 +26,8 @@ const props = withDefaults(
                         {{ props.block.text }}
                     </p>
                     <BaseLink
-                        v-if="block.link"
-                        v-bind="block.link"
+                        v-if="block.link?.[0]?.linkType"
+                        v-bind="block.link?.[0]"
                         standalone
                     />
                 </div>

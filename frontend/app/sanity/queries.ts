@@ -14,7 +14,7 @@ link {
 `;
 
 export const postsQuery =
-     defineQuery(`*[_type == "post"] | order(date desc, _updatedAt desc) {
+    defineQuery(`*[_type == "post"] | order(date desc, _updatedAt desc) {
 		...
 	}`);
 export const somePostsQuery = defineQuery(/* groq */ `
@@ -49,7 +49,11 @@ export const pageQuery = defineQuery(/* groq */ `
     "pageBuilder": pageBuilder[]{
       ...,
       _type == "textImage" => {
-        ${linkFields}
+        ...,
+        "link": link[]{
+          ...,
+          ${linkReference}
+        }
       },
       _type == "teaserProjectCards" => {
         ...,
@@ -81,11 +85,6 @@ export const settingsQuery = defineQuery(/* groq */ `
     ...,
     "navigationItems": navigationItems[]->{
       ...,
-      _type == 'reference' => @-> {
-		...,
-		'slug': slug.current
-      },
-
     }
   }
 `);
