@@ -34,7 +34,7 @@ defineProps({
             >
                 <TeaserProjectCard
                     :block="project as unknown as Project"
-                    class="animate"
+                    class="animate h-full"
                     :class="{ 'animate-fade-in-blur': isVisible }"
                 />
             </AnimationWrapper>

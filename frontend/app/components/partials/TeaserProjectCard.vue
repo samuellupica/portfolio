@@ -36,19 +36,21 @@ const link = computed(() => {
     <component
         :is="component"
         :href="link"
-        class="px-24 py-24 border-2 border-border rounded-sm relative block transition-all duration-300 origin-center bg-surface-base"
+        class="px-24 py-24 flex flex-col border-2 border-border rounded-sm relative transition-all duration-300 origin-center bg-surface-base"
         :class="{
             ' hover:scale-[101%]': component === 'a',
         }"
     >
         <span
-            class="absolute bg-surface-base top-0 -translate-y-1/2 left-12 px-16 text-[24px]"
+            class="absolute bg-surface-base top-0 -translate-y-1/2 right-12 px-16 text-[24px]"
+            v-if="context"
         >
             {{ context }}
         </span>
-        <div class="mb-32 md:mb-44">
-            <!--          TODO: check styling for tablet-->
-            <h3 class="text-[36px] font-semibold md:text-[48px] md:mb-2">
+        <div class="mb-32 md:mb-44 grow">
+            <h3
+                class="text-[36px] font-semibold md:text-[48px] mb-2 md:mb-4 leading-[110%]"
+            >
                 {{ title }}
             </h3>
             <p
