@@ -20,7 +20,7 @@
     --color-onyx-600: rgb(77, 77, 77);
     --color-onyx-500: rgb(102, 102, 102);
     --color-onyx-400: rgb(128, 128, 128);
-    --color-onyx-300: rgb(179, 179, 179);
+    --color-onyx-300: rgb(140, 131, 131);
     --color-onyx-200: rgb(204, 204, 204);
     --color-onyx-100: rgb(230, 230, 230);
     --color-onyx-50: rgb(242, 242, 242);
@@ -33,8 +33,8 @@
     --color-text-main: var(--color-onyx-950);
     --color-text-body: var(--color-onyx-950);
     --color-text-inverted-body: var(--color-floral-100);
-    --color-tag-tech-primary: rgb(255, 234, 0);
-    --color-tag-design-primary: rgb(0, 255, 225);
+    --color-tag-tech-primary: rgb(246, 255, 0);
+    --color-tag-design-primary: rgb(0, 255, 166);
     --color-border: var(--color-onyx-800);
     --color-color-button-surface-primary: rgb(255, 255, 255);
     --color-link-primary: var(--color-onyx-600);

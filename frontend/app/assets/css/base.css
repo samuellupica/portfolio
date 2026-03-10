@@ -10,9 +10,37 @@ html {
 
 body {
     @apply bg-surface-base text-text-body;
+    transition:
+        background-color 0.6s ease,
+        color 0.6s ease;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    @apply text-text-main
+body.dark {
+    --color-surface-base: var(--color-onyx-800);
+    --color-text-body: var(--color-floral-100);
+    --color-text-main: var(--color-floral-100);
+    --color-border: var(--color-onyx-300);
+    --color-link-primary: var(--color-onyx-300);
+    --color-link-primary-hover: var(--color-floral-100);
+    --color-color-button-surface-primary: var(--color-onyx-700);
 }
 
+body.dark .bg-tag-design-primary,
+body.dark .bg-tag-tech-primary {
+    @apply text-text-main;
+    --color-text-main: var(--color-onyx-950);
+}
+
+body.dark header img {
+    filter: invert(1);
+    transition: filter 0.6s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply text-text-main;
+}
