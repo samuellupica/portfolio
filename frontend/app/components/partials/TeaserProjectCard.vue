@@ -36,7 +36,7 @@ const link = computed(() => {
     <component
         :is="component"
         :href="link"
-        class="px-24 py-24 flex flex-col border-2 border-border rounded-sm relative transition-all duration-300 origin-center bg-surface-base"
+        class="px-24 py-24 flex flex-col border-2 border-border rounded-sm relative transition-all duration-300 origin-center"
         :class="{
             ' hover:scale-[101%]': component === 'a',
         }"

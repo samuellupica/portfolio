@@ -4,6 +4,7 @@ import { settingsQuery } from '~/sanity/queries';
 import VHeader, { type HeaderProps } from '~/components/global/VHeader.vue';
 
 const { data: settings } = await useSanityQuery<HeaderProps>(settingsQuery);
+const { sentinel: darkSentinel } = useDarkMode();
 </script>
 
 <template>
@@ -13,9 +14,10 @@ const { data: settings } = await useSanityQuery<HeaderProps>(settingsQuery);
     <main>
         <slot />
     </main>
-    <VFooter
-        v-if="settings"
-        :footer-title="settings.footerTitle"
-        :footer-link="settings.footerLink"
-    />
+    <div v-if="settings" ref="darkSentinel">
+        <VFooter
+            :footer-title="settings.footerTitle"
+            :footer-link="settings.footerLink"
+        />
+    </div>
 </template>
