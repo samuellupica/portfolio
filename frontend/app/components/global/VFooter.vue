@@ -10,7 +10,10 @@ defineProps<{
 </script>
 
 <template>
-    <AnimationWrapper v-slot="{ isVisible }">
+    <AnimationWrapper
+        v-slot="{ isVisible }"
+        class="section-container section-container--lg"
+    >
         <footer
             class="footer animate"
             :class="{ 'animate-fade-in-blur': isVisible }"
@@ -20,7 +23,7 @@ defineProps<{
                 <span class="blob-2"></span>
             </div>
 
-            <div class="section-container section-container--lg relative z-10">
+            <div class="section-container section-container--lg relative">
                 <div class="flex flex-col gap-44 md:gap-64">
                     <div
                         class="flex flex-col gap-24 md:gap-32 max-w-section-md base-button"
@@ -51,7 +54,7 @@ defineProps<{
 }
 
 .blob-2 {
-    @apply blur-[100px] w-[100%] h-[90%] md:w-[90%] md:h-[70%] rounded-full bg-linear-to-br  from-indigo-500/400 to-indigo-200  absolute bottom-[10%] right-[1%];
+    @apply blur-[100px] w-[100%] h-[90%] md:w-[90%] md:h-[75%] rounded-full bg-linear-to-br  from-indigo-500/80 to-indigo-200  absolute bottom-[10%] right-[1%];
     animation: moveBlob2 7s ease-in-out infinite;
 }
 
@@ -62,11 +65,11 @@ defineProps<{
     }
     50% {
         transform: translate(30%, -10%);
-        opacity: 0.7;
+        opacity: 0.8;
     }
     78% {
-        transform: translate(10%, -20%);
-        opacity: 0.8;
+        transform: translate(10%, -20%) scaleX(80%);
+        opacity: 0.9;
     }
 }
 
@@ -76,12 +79,11 @@ defineProps<{
         transform: translate(0, 0);
     }
     50% {
-        transform: translate(-90%, -30%);
-        opacity: 0.9;
+        transform: translate(-50%, -30%) scaleX(40%);
     }
     78% {
-        transform: translate(-10%, -10%);
-        opacity: 0.8;
+        transform: translate(-10%, -40%);
+        opacity: 0.5;
     }
 }
 </style>
