@@ -42,14 +42,14 @@ const link = computed(() => {
         }"
     >
         <span
-            class="absolute bg-surface-base top-0 -translate-y-1/2 right-12 px-16 text-[24px]"
+            class="absolute rounded-full bg-surface-base top-0 -translate-y-1/2 right-12 px-16 text-[24px]"
             v-if="context"
         >
             {{ context }}
         </span>
         <div class="mb-32 md:mb-44 grow">
             <h3
-                class="text-[36px] font-semibold md:text-[48px] mb-2 md:mb-4 leading-[110%]"
+                class="text-[36px] font-semibold md:text-[48px] mb-2 md:mb-4 leading-[110%] transition-colors duration-[600ms]"
             >
                 {{ title }}
             </h3>
@@ -78,6 +78,3 @@ const link = computed(() => {
         </div>
     </component>
 </template>
-<style scoped>
-@reference '~/assets/css/main.css';
-</style>
