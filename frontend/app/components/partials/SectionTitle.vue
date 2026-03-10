@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import type { SectionTitle } from '~/sanity/types';
 
-defineProps<SectionTitle>();
+defineProps<SectionTitle & { variant?: 'default' | 'inverted' }>();
 </script>
 
 <template>
-    <div class="lg:ml-100">
+    <div :class="{ 'text-text-inverted-body': variant === 'inverted' }">
         <h2 class="section-title">
             <span
                 v-for="(word, i) in title"
@@ -14,6 +14,7 @@ defineProps<SectionTitle>();
                 lang="de"
                 :class="{
                     'text-text-accent': word._type === 'highlightedText',
+                    'text-text-inverted-body': variant === 'inverted',
                 }"
             >
                 {{ word.text }}<span v-if="i < title.length - 1">&nbsp;</span>

@@ -1,5 +1,5 @@
 main {
-    @apply md:py-26 py-26;
+    @apply md:pb-[200px] py-100;
 }
 
 .section-container {

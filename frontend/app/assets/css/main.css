@@ -32,11 +32,15 @@
     --color-text-accent: var(--color-lavender-500);
     --color-text-main: var(--color-onyx-950);
     --color-text-body: var(--color-onyx-950);
+    --color-text-inverted-body: var(--color-floral-100);
     --color-tag-tech-primary: rgb(255, 234, 0);
     --color-tag-design-primary: rgb(0, 255, 225);
     --color-border: var(--color-onyx-800);
+    --color-color-button-surface-primary: rgb(255, 255, 255);
     --color-link-primary: var(--color-onyx-600);
     --color-link-primary-hover: var(--color-onyx-950);
+    --color-color-button-surface-primary-hover: var(--color-lavender-500);
+    /* Collection: Tokens */
 
     /* radius */
     --radius-sm: 2px;

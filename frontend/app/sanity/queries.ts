@@ -85,6 +85,10 @@ export const settingsQuery = defineQuery(/* groq */ `
     ...,
     "navigationItems": navigationItems[]->{
       ...,
+    },
+    footerLink {
+      ...,
+      ${linkReference}
     }
   }
 `);

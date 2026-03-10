@@ -13,4 +13,9 @@ const { data: settings } = await useSanityQuery<HeaderProps>(settingsQuery);
     <main>
         <slot />
     </main>
+    <VFooter
+        v-if="settings"
+        :footer-title="settings.footerTitle"
+        :footer-link="settings.footerLink"
+    />
 </template>

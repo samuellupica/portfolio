@@ -9,11 +9,16 @@ export const settings = defineType({
     name: 'settings',
     title: 'Settings',
     type: 'document',
+    groups: [
+        { name: 'navigation', title: 'Navigation' },
+        { name: 'footer', title: 'Footer' },
+    ],
     fields: [
         defineField({
             name: 'navigationItems',
             title: 'Navigation Items',
             type: 'array',
+            group: 'navigation',
             of: [
                 {
                     type: 'reference',
@@ -27,7 +32,21 @@ export const settings = defineType({
             name: 'externalNavigationLinks',
             title: 'External Navigation Links',
             type: 'array',
+            group: 'navigation',
             of: [{ type: 'externalNavigationLink' }],
+        }),
+        defineField({
+            name: 'footerTitle',
+            title: 'Title',
+            type: 'sectionTitle',
+            group: 'footer',
+            validation: (rule) => rule.required(),
+        }),
+        defineField({
+            name: 'footerLink',
+            title: 'Link',
+            type: 'link',
+            group: 'footer',
         }),
     ],
     preview: {

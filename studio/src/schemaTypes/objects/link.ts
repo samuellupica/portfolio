@@ -23,6 +23,7 @@ export const link = defineType({
                          { title: 'URL', value: 'href' },
                          { title: 'Page', value: 'page' },
                          { title: 'Post', value: 'post' },
+                         { title: 'Email', value: 'email' },
                     ],
                     layout: 'radio',
                },
@@ -37,6 +38,26 @@ export const link = defineType({
                     Rule.custom((value, context: any) => {
                          if (context.parent?.linkType === 'href' && !value) {
                               return 'URL is required when Link Type is URL';
+                         }
+                         return true;
+                    }),
+          }),
+          defineField({
+               name: 'email',
+               title: 'Email Address',
+               type: 'string',
+               hidden: ({ parent }) => parent?.linkType !== 'email',
+               validation: (Rule) =>
+                    Rule.custom((value, context: any) => {
+                         if (context.parent?.linkType === 'email' && !value) {
+                              return 'Email address is required when Link Type is Email';
+                         }
+                         if (
+                              context.parent?.linkType === 'email' &&
+                              value &&
+                              !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+                         ) {
+                              return 'Please enter a valid email address';
                          }
                          return true;
                     }),
