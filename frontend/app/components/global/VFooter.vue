@@ -26,7 +26,7 @@ defineProps<{
             <div class="section-container section-container--lg relative">
                 <div class="flex flex-col gap-44 md:gap-64">
                     <div
-                        class="flex flex-col gap-24 md:gap-32 max-w-section-md base-button"
+                        class="flex flex-col gap-24 md:gap-32 max-w-section-md"
                     >
                         <SectionTitle variant="inverted" v-bind="footerTitle" />
                         <BaseButton
@@ -49,12 +49,12 @@ defineProps<{
 }
 
 .blob-1 {
-    @apply blur-[100px] size-[100%] md:size-[80%] rounded-full bg-linear-to-tr from-lavender-500/80 to-pink-300/80 absolute bottom-0 left-[1%];
+    @apply blur-[70px] md:blur-[100px] w-[100%] h-[70%] md:size-[80%] rounded-full bg-linear-to-tr from-lavender-500/80 to-pink-300/80 absolute bottom-0 left-[1%];
     animation: moveBlob1 8s ease-in-out infinite;
 }
 
 .blob-2 {
-    @apply blur-[100px] w-[100%] h-[90%] md:w-[90%] md:h-[75%] rounded-full bg-linear-to-br  from-indigo-500/80 to-indigo-200  absolute bottom-[10%] right-[1%];
+    @apply blur-[70px] md:blur-[100px] w-[100%] h-[70%] md:w-[90%] md:h-[75%] rounded-full bg-linear-to-br  from-indigo-500/80 to-indigo-200  absolute bottom-[10%] right-[1%];
     animation: moveBlob2 7s ease-in-out infinite;
 }
 
